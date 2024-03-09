@@ -284,18 +284,18 @@ function isEmail(email) {
 }
 
 function signUp() {
-    let signUpData = {
-        "username": username.value.trim(),
-        "email": email.value.trim(),
-        "password": password.value.trim(),
-    };
+   let signUpArray = [];
+   let signUpData = {
+       "username": username.value.trim(),
+       "email": email.value.trim(),
+       "password": password.value.trim(),
+   };
 
-    let signUpArray =  
-    signUpArray.push(signUpData);
-    localStorage.setItem('signUpData', JSON.stringify(signUpArray));
+   signUpArray.push(signUpData);
+   localStorage.setItem('signUpData', JSON.stringify(signUpArray));
 
-    alert('You have successfully signed up.');
-    window.location.href = "/";
+   alert('You have successfully signed up.');
+   window.location.href = "Login.html";
 }
  </script>
 </html>
