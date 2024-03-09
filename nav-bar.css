@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F9F5F0;
+    padding: 10px 20px;
+}
+
+.navbar img {
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+}
+
+.nav-list li {
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.nav-list a
+{
+    color: #321313;
+    font-size: 16px;
+    font-family: 'Lora', serif;
+    text-decoration: none;
+}
+
+.nav-list li:hover a:hover
+{
+    color: #EFEFEF;
+}
+
+.nav-list li:hover
+{
+    font-size: 16px;
+    background-color: #F4991A;
+    width: auto;
+    border-radius: 2px;
+}
+
+.nav-list .search-bar:hover{
+    background-color: #F9F5F0;
+    padding: 5px;
+    height: 20px;
+}
+
+.nav-list input
+{
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    box-shadow: #F9F5F0;
+    padding: 0;
+}
+.menu-icon
+{
+    display: none;
+}
+
+.btn-login
+{
+    background-color: #321313;
+    color: #EFEFEF;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Lora', serif;
+}
+
+.btn-login:hover
+{
+    background-color: #F4991A;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 840px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #F9F5F0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index:1;
+    }
+
+    .nav-list.show {
+        display: flex;
+    }
+
+    .nav-list li {
+        display: block;
+        margin: 10px 0;
+    }
+    .menu-icon {
+        display: block;
+        float: right;
+        background-color: #321313;
+        color: white;
+        padding: 4px;
+        border-radius: 5px;
+    }
+
+    .nav-list li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-list li:hover {
+    padding: 5px;
+    }
+
+    .nav-list li input{
+        width: 150px;
+    }
+
+    .btn-login
+    {
+        margin-right: 10px;
+    }
+}
+
+.menu-icon:hover
+{
+    cursor: pointer;
+    background-color: #F4991A;
+    color: #EFEFEF;
+    padding: 5px;
+}
+
+.nav-img
+{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 370px)
+{
+    .logo-name
+    {
+        display: none;
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crave Compass</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap"
+            rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+            rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="test1_new_dark.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    </head>
+    <body>
+        <nav>
+            <div class="navbar">
+                <div class="nav-img">
+                    <a href="index.html"><img
+                            src="Assests/logo.png"
+                            alt="Crave Compass Logo"></a>
+                    <a href="index.html"><img
+                            src="Assests/logo_name.png"
+                            alt="Crave Compass"
+                            style="width: 100px;height:60px;margin-top: 10px;margin-left: 15px;"
+                            class="logo-name"></a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" id="recipes">Recipes</a></li>
+                    <li><a href="recipe-submission.html" target="_blank">Add
+                            Recipe</a></li>
+                    <li><a href="#" id="ContactUs">Contact Us</a></li>
+                    <li><a href="https://forms.gle/xNf6LC4owd9Y21Nt8"
+                            target="_blank">Feedback</a></li>
+                    <li class="search-bar"><input type="text" id="searchInput"
+                            placeholder="Search 🔎"><button id="searchButton">Search</button></li>
+
+                </ul>
+                <div>
+                    <a href="Login Page/SignUp.html"><button
+                            class="btn-login">Login/SignUp</button></a>
+                    <a class="menu-icon" onclick="toggleMenu()"><i
+                            class='bx bx-menu'></i></a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="recipe-main-page">
+                <div class="video-container">
+                    <video autoplay muted loop class="myVideo">
+                        <source src="Assests/cooking-video.mp4"
+                            type="video/mp4">
+                    </video>
+                    <video autoplay muted loop class="myVideo-mobile">
+                        <source src="Assests/bg-vdeo-4.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+                <div class="text-overlay">
+                    <h1>Crave Compass</h1>
+                    <h3>Hungry for Adventure? </h3>
+                    <h3><span>Let Crave Compass</span> Be Your Flavor
+                        Navigator!</h3>
+                </div>
+            </div>
+        </main>
+        <section class="home-categories-card">
+            <div class="category-heading">
+                <div>
+                    <h3 style="padding: 5px;">Crave Filter</h3>
+                </div>
+                <div class="view-categories">
+                    <h2><button><a href="#">View all categories
+                            </a></button></h3>
+                </div>
+            </div>
+            <div class="category-container">
+                <div class="category" onclick="viewCategory('breakfast')">
+                    <img src="Assests/breakfast.png"
+                        alt="breakfast">
+                    <h4>Breakfast</h4>
+                </div>
+                <div class="category">
+                    <img src="Assests/chinese.png"
+                        alt="chinese">
+                    <h4>Chinese</h4>
+                </div>
+                <div class="category">
+                    <img src="Assests/Vegeterian.png" alt="Veg">
+                    <h4>Vegeterian</h4>
+                </div>
+                <div class="category">
+                    <img src="Assests/Smoothie.png"
+                        alt="Smoothie">
+                    <h4>Smoothie</h4>
+                </div>
+                <div class="category">
+                    <img src="Assests/non-veg.png"
+                        alt="Non-veg">
+                    <h4>Non-Veg</h4>
+                </div>
+                <div class="category">
+                    <img src="Assests/Light snack.png"
+                        alt="Light-snack">
+                    <h4>Light Snack</h4>
+                </div>
+                <div class="view-categories-2">
+                    <button><a href>View All Categories <span
+                                class="material-symbols-outlined">
+                                category</span></a></button>
+                </div>
+            </div>
+        </section>
+        <section class="recipe-items-container">
+            <div class="category-heading">
+                <div>
+                    <h3 style="padding: 5px;">Craving Cure</h3>
+                </div>
+                <div class="view-categories">
+                    <h2><button onclick="viewAllRecipes()"><a>View all
+                                recipes</a></button></h3>
+                </div>
+            </div>
+            <div class="recipe-container">
+            </div>
+            <div class="show-btn-container">
+                <button class="show-btn">Show More<i
+                        class='bx bx-chevron-down-circle'></i></button>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container" id="footer">
+                <div class="footer-content">
+                    <div class="footer-section about">
+                        <img src="Assests/logo.png" alt="Logo"
+                            style="height: 80px;">
+                        <img src="Assests/logo_name.png" alt="Logo name"
+                            style="height: 80px;width: 200px">
+                        <p>Feeling hungry? Don't despair, <br>Crave Compass has
+                            the meals you can share!</p>
+                    </div>
+                    <div class="footer-section links">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="recipe-submission.html" target="_blank">Add Recipe</a></li>
+                            <li><a href="https://forms.gle/xNf6LC4owd9Y21Nt8" target="_blank">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section legal">
+                        <h3>Legal</h3>
+                        <ul class="legal-links">
+                            <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                            <li><a href="Terms&Conditions.html">Terms and Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="color:#eff;">Contact Us</h3>
+                        <div class="contact">
+                            <span><i class="fas fa-phone"></i>123-456-789</span>
+                            <span><i
+                                    class="fas fa-envelope"></i>info@example.com</span>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/anshmittal_811/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://github.com/AnshMittal08" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; Crave compass | Designed by Ansh Mittal
+            </div>
+        </footer>
+        <script src="test1.js"></script>
+    </body>
+</html>

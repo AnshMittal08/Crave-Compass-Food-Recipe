@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+         rel='stylesheet'>
+      <title>Sign-Up</title>
+      <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: "Poppins",sans-serif;
+      }
+      body{
+         background-image: url(food4.jpeg);
+         background-repeat: no-repeat;
+         background-size: cover;
+         min-height: 100vh;  
+         background-position: center;    
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         
+      }
+      
+      .container
+      {
+         width: 420px;
+         background-color: blueviolet;
+         color: #112B3C;
+         border-radius: 12px;
+         padding: 30px 50px;
+         background: transparent;
+         border: 2px solid #20537578;
+         backdrop-filter: blur(20px);
+         
+      }
+
+      .logo-name
+      {
+         width: 180px;
+         margin-left: 30px;
+      }
+
+      @media screen and (max-width:450px) {
+         body{
+            background-image: url(food4-3.jpeg);
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: left;   
+         }
+         .container{
+         width: 340px;
+         background-color: blueviolet;
+         color: #112B3C;
+         border-radius: 12px;
+         padding: 30px 50px;
+         background: transparent;
+         border: 2px solid #20537578;
+         backdrop-filter: blur(5px);
+         }
+         .logo-name
+         {
+            width: 100px;
+            margin-left: 20px;
+            height: 80px;
+         }
+      }
+      .container h1
+      {
+         font-size: 40px;
+         text-align: center;
+         color: #112B3C;
+      }
+      .container .input-box
+      {
+         position: relative;
+         width: 100%;
+         height: 50px;
+      }
+      .input-box input
+      {
+         width: 100%;
+         height: 100%;
+         background:transparent;
+         border: none;
+         outline: none;
+         border: 2px solid rgba(0, 0, 0, 0.2);
+         border-radius: 40px;
+         font-size: 16px;
+         color: #205375;
+         padding: 20px 45px 20px 20px;
+      }
+      .input-box input::placeholder
+      {
+         color: #4d8387;
+      }
+      .input-box i
+      {
+          position: absolute ;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          font: size 20px;
+      }
+      .container .remember-forgot
+      {
+         display: flex;
+         justify-content: space-between;
+         font-size: 15px;
+         margin: -15px 0 15px;
+      }
+      .remember-forgot label input
+      {
+         accent-color: #4d8387;
+         margin-right: 3px;
+      }
+      .remember-forgot a
+      {
+         text-decoration: none;
+         color: #F66B0E;
+         font-weight: 700;
+      }
+      .remember-forgot a:hover{
+         text-decoration: underline;
+      }
+      .container .btn
+      {
+         width: 100%;
+         height: 45px;
+         background: #F66B0E;
+         border: none;
+         outline: none;
+         border-radius: 40px;
+         box-shadow: 0 0 10px rgba(0,0,0,.1);
+         cursor: pointer;
+         font-size: 16px;
+         color: #333;
+         font-weight: 700;
+      }
+
+      .container .registration-link
+      {
+         font-size: 15px;
+         text-align: center;
+         margin: 20px 0 15px;
+      }
+      .registration-link p a
+      {
+         color: #F66B0E;
+         text-decoration: none;
+         font-weight: 700;
+      }
+      .registration-link p a:hover
+      {
+         text-decoration: underline;
+      }
+
+      .input-box small {
+         position: absolute;
+         bottom: -15px; /* Adjust this value as needed */
+         left: 50%;
+         transform: translateX(-50%);
+         padding-left: 30%;
+         visibility: hidden;
+         color: red;
+         width: 100%;
+     }
+
+      .input-box.error small {
+         visibility: visible;
+      }
+
+      .input-box
+      {
+         margin: 15px 0 20px;
+      }
+    </style>
+   </head>
+   <body>
+      <div class="container">
+         <form action id="form">
+            <img src="logo.png" style="height: 80px;width: 80px;"> <img
+               src="logo_name.png" class="logo-name">
+            <h1>Sign-Up</h1>
+            <div class="input-box">
+               <input type="text" placeholder="Enter a Username" id="username"
+                  required>
+               <i class='bx bxs-user'></i>
+               <small></small>
+            </div>
+            <div class="input-box">
+               <input type="email" placeholder="Enter Your Mail" id="email"
+                  required>
+               <i class='bx bxs-envelope'></i>
+               <small></small>
+            </div>
+            <div class="input-box">
+               <input type="password" placeholder="Enter a Password"
+                  id="password" required>
+               <i class='bx bx-lock'></i>
+               <small></small>
+            </div>
+            <div class="input-box">
+               <input type="password" placeholder="Confirm Password"
+                  id="confirm" required>
+               <i class='bx bxs-lock'></i>
+               <small></small>
+            </div>
+            <button type="submit" class="btn">SignUp</button>
+            <div class="registration-link">
+               <p>Already have an account?<a href="Login.html">Login
+                     here.</a></p>
+            </div>
+         </form>
+      </div>
+   </body>
+   <script>
+   const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const confirm = document.getElementById('confirm');
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    checkInputs();
+});
+
+function checkInputs() {
+    const usernamevalue = username.value.trim();
+    const emailvalue = email.value.trim();
+    const passwordvalue = password.value.trim();
+    const confirmvalue = confirm.value.trim();
+
+    if (usernamevalue === '') {
+        setError(username, "This field cannot be blank !!");
+    } else {
+        setSuccess(username);
+    }
+
+    if (emailvalue === '') {
+        setError(email, "This field cannot be blank !!");
+    } else if (!isEmail(emailvalue)) {
+        setError(email, "Check the email !!");
+    } else {
+        setSuccess(email);
+    }
+
+    if (passwordvalue === '') {
+        setError(password, "This field cannot be blank !!");
+    } else if (passwordvalue.length < 4) {
+        setError(password, "Password is too small!!");
+    } else {
+        setSuccess(password);
+    }
+
+    if (confirmvalue === '') {
+        setError(confirm, "This field cannot be blank !!!!");
+    } else if (passwordvalue !== confirmvalue) {
+        setError(confirm, "Password doesn't match.");
+    } else {
+        setSuccess(confirm);
+        signUp();
+    }
+}
+
+function setError(input, msg) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+    small.innerText = msg;
+    formControl.className = "input-box error";
+}
+
+function setSuccess(input) {
+    const formControl = input.parentElement;
+    formControl.className = "input-box success";
+}
+
+function isEmail(email) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+function signUp() {
+    let signUpData = {
+        "username": username.value.trim(),
+        "email": email.value.trim(),
+        "password": password.value.trim(),
+    };
+
+    let signUpArray =  
+    signUpArray.push(signUpData);
+    localStorage.setItem('signUpData', JSON.stringify(signUpArray));
+
+    alert('You have successfully signed up.');
+    window.location.href = "/";
+}
+ </script>
+</html>
