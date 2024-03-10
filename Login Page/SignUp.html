@@ -219,83 +219,86 @@
    </body>
    <script>
    const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const confirm = document.getElementById('confirm');
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    checkInputs();
-});
-
-function checkInputs() {
-    const usernamevalue = username.value.trim();
-    const emailvalue = email.value.trim();
-    const passwordvalue = password.value.trim();
-    const confirmvalue = confirm.value.trim();
-
-    if (usernamevalue === '') {
-        setError(username, "This field cannot be blank !!");
-    } else {
-        setSuccess(username);
-    }
-
-    if (emailvalue === '') {
-        setError(email, "This field cannot be blank !!");
-    } else if (!isEmail(emailvalue)) {
-        setError(email, "Check the email !!");
-    } else {
-        setSuccess(email);
-    }
-
-    if (passwordvalue === '') {
-        setError(password, "This field cannot be blank !!");
-    } else if (passwordvalue.length < 4) {
-        setError(password, "Password is too small!!");
-    } else {
-        setSuccess(password);
-    }
-
-    if (confirmvalue === '') {
-        setError(confirm, "This field cannot be blank !!!!");
-    } else if (passwordvalue !== confirmvalue) {
-        setError(confirm, "Password doesn't match.");
-    } else {
-        setSuccess(confirm);
-        signUp();
-    }
-}
-
-function setError(input, msg) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector("small");
-    small.innerText = msg;
-    formControl.className = "input-box error";
-}
-
-function setSuccess(input) {
-    const formControl = input.parentElement;
-    formControl.className = "input-box success";
-}
-
-function isEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-}
-
-function signUp() {
-   let signUpArray = [];
-   let signUpData = {
-       "username": username.value.trim(),
-       "email": email.value.trim(),
-       "password": password.value.trim(),
-   };
-
-   signUpArray.push(signUpData);
-   localStorage.setItem('signUpData', JSON.stringify(signUpArray));
-
-   alert('You have successfully signed up.');
-   window.location.href = "Login.html";
-}
+      const username = document.getElementById('username');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const confirm = document.getElementById('confirm');
+      let signUpArray = []; 
+  
+      form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          checkInputs();
+      });
+  
+      function checkInputs() {
+          const usernamevalue = username.value.trim();
+          const emailvalue = email.value.trim();
+          const passwordvalue = password.value.trim();
+          const confirmvalue = confirm.value.trim();
+  
+          if (usernamevalue === '') {
+              setError(username, "This field cannot be blank !!");
+          } else {
+              setSuccess(username);
+          }
+  
+          if (emailvalue === '') {
+              setError(email, "This field cannot be blank !!");
+          } else if (!isEmail(emailvalue)) {
+              setError(email, "Check the email !!");
+          } else {
+              setSuccess(email);
+          }
+  
+          if (passwordvalue === '') {
+              setError(password, "This field cannot be blank !!");
+          } else if (passwordvalue.length < 4) {
+              setError(password, "Password is too small!!");
+          } else {
+              setSuccess(password);
+          }
+  
+          if (confirmvalue === '') {
+              setError(confirm, "This field cannot be blank !!!!");
+          } else if (passwordvalue !== confirmvalue) {
+              setError(confirm, "Password doesn't match.");
+          } else {
+              setSuccess(confirm);
+              signUp();
+          }
+      }
+  
+      function setError(input, msg) {
+          const formControl = input.parentElement;
+          const small = formControl.querySelector("small");
+          small.innerText = msg;
+          formControl.className = "input-box error";
+      }
+  
+      function setSuccess(input) {
+          const formControl = input.parentElement;
+          formControl.className = "input-box success";
+      }
+  
+      function isEmail(email) {
+          return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+      }
+  
+      function signUp() {
+         let signUpData = {
+             "username": username.value.trim(),
+             "email": email.value.trim(),
+             "password": password.value.trim(),
+         };
+     
+         // Check if signUpArray exists in localStorage
+         let signUpArray = JSON.parse(localStorage.getItem('signUpData')) || [];
+     
+         signUpArray.push(signUpData); // Add the data to the array
+         localStorage.setItem('signUpData', JSON.stringify(signUpArray));
+     
+         alert('You have successfully signed up.');
+         window.location.href = "Login.html";
+     }
  </script>
 </html>
