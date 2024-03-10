@@ -1,3 +1,8 @@
+function toggleMenu() {
+    var navList = document.querySelector('.nav-list');
+    navList.classList.toggle('show'); 
+  }
+
 const categories = ['Breakfast', 'Chinese', 'Vegeterian', 'Smoothie', 'Non-Veg', 'Light Snack'];
 const regions = ['Italian', 'Sweets', 'India', 'French'];
 const recipesByCategory = {
