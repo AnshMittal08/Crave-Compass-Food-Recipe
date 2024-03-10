@@ -6,6 +6,7 @@
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
          rel='stylesheet'>
       <title>Login</title>
+      <link rel="icon" href="../Assests/favicon.png">
       <style>
      *{
         margin: 0;
@@ -280,7 +281,10 @@ function setError(input, msg) {
    const formControl = input.parentElement;
    const small = formControl.querySelector("small");
    small.innerText = msg;
-   formControl.className = "input-box error";
+   let inputs = document.querySelectorAll('.input-box input');
+           inputs.forEach(input => {
+               input.style.borderColor = 'red';
+           });
 }
 
 
