@@ -178,21 +178,9 @@ function displayRecipes(category) {
     });
 }
 
-function displayRecipesCategory(category) {
-    const recipeContainer = document.querySelector('.recipe-container');
-    recipeContainer.innerHTML = ''; // Clear previous recipes
-
-    const recipes = recipesByCategory[category];
-    recipes.forEach(recipe => {
-        const recipeCard = createRecipeCard(recipe);
-        recipeContainer.appendChild(recipeCard);
-    });
-}
-
-
 // Display recipes for the category specified in the URL
 if (category) {
-    displayRecipesCategory(category);
+    displayRecipes(category);
 } else {
     console.error('Category parameter not found in URL');
 }
