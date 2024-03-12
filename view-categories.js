@@ -6,17 +6,17 @@ function toggleMenu() {
 const categories = ['Breakfast', 'Chinese', 'Vegeterian', 'Smoothie', 'Non-Veg', 'Light Snack'];
 const regions = ['Italian', 'Sweets', 'India', 'French'];
 const recipesByCategory = {
-    'Breakfast': [
+    'breakfast': [
         { name: 'Pasta Carbonara', category: 'Breakfast',img:"Assests/pasta-carbonara-1.jpg"}
     ],
-    'Vegeterian': [
+    'vegeterian': [
         { name: 'Baigan Bharta', category: 'Vegeterian',img:"https://www.themealdb.com/images/media/meals/urtpqw1487341253.jpg" },
         { name: 'Matar Paneer', category: 'Vegeterian',img:"https://shwetainthekitchen.com/wp-content/uploads/2012/11/IMG_7026-scaled.jpg"},
         { name: 'Dal Fry', category: 'Vegeterian',img:"https://www.themealdb.com/images/media/meals/wuxrtu1483564410.jpg" }, 
         { name: 'Rajma/Kidney Beans Curry', category: 'Vegeterian',img:"https://www.cubesnjuliennes.com/wp-content/uploads/2020/06/Authentic-Punjabi-Rajma-Recipe.jpg" },
         { name: 'Chole Chawal', category: 'Vegeterian',img:"https://img.freepik.com/premium-photo/indian-food-chole-chawal-spicy-chickpea-curry-with-plain-rice-served-with-green-salad_466689-372.jpg" }
     ],
-    'Light Snack': [
+    'light snack': [
         { name: 'Chocolate Chip Cookies', category: 'Light Snack',img:"https://handletheheat.com/wp-content/uploads/2020/10/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg"}
     ]
 };
@@ -178,9 +178,21 @@ function displayRecipes(category) {
     });
 }
 
+function displayRecipesCategory(category) {
+    const recipeContainer = document.querySelector('.recipe-container');
+    recipeContainer.innerHTML = ''; // Clear previous recipes
+
+    const recipes = recipesByCategory[category];
+    recipes.forEach(recipe => {
+        const recipeCard = createRecipeCard(recipe);
+        recipeContainer.appendChild(recipeCard);
+    });
+}
+
+
 // Display recipes for the category specified in the URL
 if (category) {
-    displayRecipes(category);
+    displayRecipesCategory(category);
 } else {
     console.error('Category parameter not found in URL');
 }
@@ -190,7 +202,7 @@ const categoryLinks = document.querySelectorAll('.category');
 categoryLinks.forEach(categoryLink => {
     categoryLink.addEventListener('click', () => {
         const category = categoryLink.textContent.trim();
-        displayRecipes(category);
+        displayRecipes(category.toLowerCase());
     });
 });
 
@@ -295,4 +307,3 @@ searchInput.addEventListener('input', () => {
     const filteredRecipes = filterRecipes(query);
     displayFilteredRecipes(filteredRecipes);
 });
-
