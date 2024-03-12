@@ -317,43 +317,6 @@ let collapseBtn = document.createElement('button');
         recipeDiv.scrollIntoView({behavior:'smooth'});
     });
 
-    //search functionality
-//     const searchInput = document.getElementById('searchInput');
-// const recipeContainerDiv = document.querySelector('.recipe-container');
-
-// searchInput.addEventListener('input', function() {
-//     const searchText = searchInput.value.toLowerCase();
-//     const filteredRecipes = recipes.filter(recipe => {
-//         return recipe.name.toLowerCase().includes(searchText);
-//     });
-//     renderRecipes(filteredRecipes);
-// });
-
-// function renderRecipes(recipesToRender) {
-//     recipeContainerDiv.innerHTML = '';
-//     recipesToRender.forEach(recipe => {
-//         const recipeDiv = document.createElement('div');
-//         recipeDiv.classList.add('recipe');
-//         recipeDiv.innerHTML = `
-//             <div><img src="${recipe.image}" alt="${recipe.name}" onclick="navigateToRecipe('${recipe.name}')"></div>
-//             <div class="recipe-heading"><h4>${recipe.name}</h4></div>
-//         `;
-//         recipeDiv.classList.add('recipe-card');
-//         recipeContainerDiv.appendChild(recipeDiv);
-//     });
-// }
-
-const searchInput = document.getElementById('searchInput');
-const searchButton = document.getElementById('searchButton');
-
-searchButton.addEventListener('click', function() {
-    const searchText = searchInput.value.trim();
-    if (searchText) {
-        window.location.href = `recipe.html?search=${searchText}`;
-    }
-});
-
-
 function viewCategory(category) {
-    window.location.href = `view-all-categories.html?${category}`;
+    window.location.href = `view-all-categories.html?category=${category}`;
 }
